@@ -1,0 +1,13 @@
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_285000_3966000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_285000_3967000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_285000_3968000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_286000_3966000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_286000_3967000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_286000_3968000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_287000_3966000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_287000_3967000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_287000_3968000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_288000_3965000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_288000_3966000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_288000_3967000.laz
+https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/AZ_GrandCanyonNP_2019_B19/AZ_GrandCanyonNP_2_2019/LAZ/USGS_LPC_AZ_GrandCanyonNP_2019_B19_288000_3968000.laz
