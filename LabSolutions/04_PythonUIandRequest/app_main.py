@@ -110,7 +110,7 @@ class LidarDownloaderApp(QMainWindow):
         self.worker = DownloadWorker(urls, save_dir)
         self.worker.progress_updated.connect(self.ui.progress_current.setValue)
         self.worker.file_finished.connect(self.handle_finished)
-        self.worker.run()
+        self.worker.start()
 
     def handle_finished(self, index: int, success: bool):
         """Updates the queue visually and embeds the absolute path secretly."""
@@ -132,11 +132,23 @@ class LidarDownloaderApp(QMainWindow):
             self.validate_inputs()
 
     def open_inspector(self):
-        """
-        Extracts the hidden file paths from selected list items
-        and launches the 2D LiDAR viewer.
-        """
-        pass
+        """Extracts the hidden file paths and launches the 2D viewer."""
+        selected = self.ui.list_tasks.selectedItems()
+        if not selected:
+            return
+
+        valid_file_paths = []
+        for item in selected:
+            # Safely grab the absolute path we hid earlier
+            file_path = item.data(Qt.UserRole)
+            if file_path and os.path.exists(file_path):
+                valid_file_paths.append(file_path)
+
+        if not valid_file_paths:
+            return
+
+        self.inspector = LidarInspector(valid_file_paths)
+        self.inspector.show()
 
 
 if __name__ == "__main__":
