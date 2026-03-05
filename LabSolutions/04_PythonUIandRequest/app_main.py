@@ -21,7 +21,7 @@ class LidarDownloaderApp(QMainWindow):
         self.setCentralWidget(self.ui)
         self.setWindowTitle("LiDAR Downloader")
 
-        # make variables with correct type for UI Elements
+        # make variables with correct type for UI Elements so intellisense works as expected
         self.btn_browse: QPushButton = self.ui.btn_browse
         self.btn_download: QPushButton = self.ui.btn_download
         self.btn_add_local: QPushButton = self.ui.add_local
@@ -31,12 +31,18 @@ class LidarDownloaderApp(QMainWindow):
         self.list_tasks: QListWidget = self.ui.list_tasks
 
 
-
-        # TODO: Enable extended selection for the list widget
-
-
+        # Enable extended selection for the list widget
+        self.list_tasks.setSelectionMode(QAbstractItemView.ExtendedSelection)
 
         # TODO: Connect UI signals (button clicks, text changes) to our slots
+
+        self.btn_browse.clicked.connect(self.browse_folder)
+        self.btn_download.clicked.connect(self.start_download)
+        self.btn_add_local.clicked.connect(self.add_local_files)
+        self.btn_inspect.clicked.connect(self.open_inspector)
+
+        self.line_path.textChanged.connect(self.validate_inputs)
+        self.text_links.textChanged.connect(self.validate_inputs)
 
         # TODO: Load saved path from config_manager
 
