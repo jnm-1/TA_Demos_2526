@@ -1,6 +1,8 @@
 import sys
 import os
-from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QListWidgetItem, QAbstractItemView
+from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QListWidgetItem, QAbstractItemView, QPushButton, \
+    QLineEdit, QPlainTextEdit, QListWidget
+
 from PySide6.QtGui import QColor
 from PySide6.QtCore import Qt
 
@@ -15,11 +17,24 @@ class LidarDownloaderApp(QMainWindow):
 
         # We load the UI as a Widget and set it as the Central Widget
         # TODO: make sure to use your QT file instead
-        self.ui = load_ui("resources/main_window_backup.ui", self)
+        self.ui = load_ui("resources/main_window.ui", self)
         self.setCentralWidget(self.ui)
         self.setWindowTitle("LiDAR Downloader")
 
+        # make variables with correct type for UI Elements
+        self.btn_browse: QPushButton = self.ui.btn_browse
+        self.btn_download: QPushButton = self.ui.btn_download
+        self.btn_add_local: QPushButton = self.ui.add_local
+        self.btn_inspect: QPushButton = self.ui.inspect
+        self.line_path: QLineEdit = self.ui.line_path
+        self.text_links: QPlainTextEdit = self.ui.text_links
+        self.list_tasks: QListWidget = self.ui.list_tasks
+
+
+
         # TODO: Enable extended selection for the list widget
+
+
 
         # TODO: Connect UI signals (button clicks, text changes) to our slots
 
