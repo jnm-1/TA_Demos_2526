@@ -36,8 +36,8 @@ def start_plugin():
     widget.setLayout(layout)
     docked_widget = sp.ui.add_dock_widget(widget)
 
-    plugin_widgets.append(docked_widget)
     plugin_widgets.append(widget)
+    plugin_widgets.append(docked_widget)
 
 
 
