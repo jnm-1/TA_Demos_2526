@@ -21,6 +21,8 @@ bl_info = {
 }
 
 import bpy
+import os
+from pathlib import Path
 
 # ── Operator ─────────────────────────────────────────────────────────
 # This is where your logic goes. One operator = one action / button.
@@ -41,6 +43,37 @@ class CLASSDEMO_OT_print_something(bpy.types.Operator):
             self.report({'WARNING'}, "No mesh objects found!")
         return {'FINISHED'}
 
+class CLASSDEMO_OT_export(bpy.types.Operator):
+    """export fbx files"""
+    bl_idname = "class_demo.export"
+    bl_label = "Export current selection"
+
+    def execute(self, context):
+        selected = []
+        for obj in context.selected_objects:
+            if obj.type == 'MESH':
+                selected.append(obj)
+        if not selected:
+            self.report({'WARNING'}, "No mesh selected!")
+            return {'CANCELLED'}
+
+        export_dir = os.path.join(Path.home(), "blender_exports")
+        os.makedirs(export_dir, exist_ok=True)
+
+        for obj in selected:
+            bpy.ops.object.select_all(action ="DESELECT")
+            obj.select_set(True)
+            context.view_layer.objects.active = obj
+
+            filepath = os.path.join(export_dir, f"{obj.name}.fbx")
+            bpy.ops.export_scene.fbx(filepath=filepath, use_selection=True)
+            self.report({'INFO'}, f"{filepath} exported!")
+
+
+        return {'FINISHED'}
+
+
+
 
 # ── Panel ────────────────────────────────────────────────────────────
 # This creates the sidebar panel in the 3D Viewport (press N to show).
@@ -56,6 +89,8 @@ class CLASSDEMO_PT_panel(bpy.types.Panel):
     def draw(self, context):
         layout = self.layout
         layout.operator("class_demo.print_something")
+        layout.separator()
+        layout.operator("class_demo.export")
 
 
 # ── Register / Unregister ────────────────────────────────────────────
@@ -64,7 +99,8 @@ class CLASSDEMO_PT_panel(bpy.types.Panel):
 
 classes = (
     CLASSDEMO_OT_print_something,
-    CLASSDEMO_PT_panel,
+    CLASSDEMO_OT_export,
+    CLASSDEMO_PT_panel
 )
 
 
