@@ -72,7 +72,39 @@ class CLASSDEMO_OT_export(bpy.types.Operator):
 
         return {'FINISHED'}
 
+class CLASSDEMO_OT_apply_material(bpy.types.Operator):
+    """applies material"""
+    bl_idname = "class_demo.apply_material"
+    bl_label = "Apply Material"
 
+    def execute(self, context:bpy.types.Context):
+
+        obj =context.active_object
+        if not obj or obj.type != "MESH":
+            self.report({'WARNING'}, "Select a mesh")
+            return {'CANCELLED'}
+
+        img_path = r"C:\Users\jan.mentzel\blender_exports\baked_color.png"
+        if not os.path.isfile(img_path):
+            self.report({'WARNING'}, "Texture not found")
+            return {'CANCELLED'}
+
+        mat = bpy.data.materials.new(name="TestMaterial")
+        mat.use_nodes = True
+        nodes = mat.node_tree.nodes
+        links = mat.node_tree.links
+
+        bsdf = nodes.get("Principled BSDF")
+
+        tex_node = nodes.new("ShaderNodeTexImage")
+        tex_node.image = bpy.data.images.load(img_path)
+
+        links.new(tex_node.outputs['Color'], bsdf.inputs['Base Color'])
+
+        obj.data.materials.clear()
+        obj.data.materials.append(mat)
+
+        return {'FINISHED'}
 
 
 # ── Panel ────────────────────────────────────────────────────────────
@@ -91,6 +123,8 @@ class CLASSDEMO_PT_panel(bpy.types.Panel):
         layout.operator("class_demo.print_something")
         layout.separator()
         layout.operator("class_demo.export")
+        layout.separator()
+        layout.operator("class_demo.apply_material")
 
 
 # ── Register / Unregister ────────────────────────────────────────────
@@ -100,6 +134,7 @@ class CLASSDEMO_PT_panel(bpy.types.Panel):
 classes = (
     CLASSDEMO_OT_print_something,
     CLASSDEMO_OT_export,
+    CLASSDEMO_OT_apply_material,
     CLASSDEMO_PT_panel
 )
 
